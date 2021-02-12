@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+        content="Become a certified preschool teacher and set up your own preschool at home. Sign Up today. ">
+    <meta name="keywords" content="Preschool, Work from home, Business, Teacher, Teaching Job">
+    <script src="jquery.js"></script>
+    <title>Demo kido.school  </title>
+    <style>
+        #show_det_btn{
+            padding: 5px;color: white;cursor: pointer;
+            background-color: grey;
+        }
+        #cookie_section{
+            width: 70vw;opacity:1;
+            color: white;
+        }
+        button{
+            color: white;
+            background-color: #188600;
+        }
+        button.selected{
+            background-color: black;
+        }
+        #cookie_overlay{
+            position: fixed;
+            bottom: 0; left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100vw;
+            height: 35vh;
+            overflow-y: scroll;
+        }
+        table, th, td { border: 1px solid black;  border-collapse: collapse;padding: 1%;}
+        /* table{display: none;table-layout: auto;width: 100%; } */
+
+        #details_table {
+            table-layout: fixed;
+            width: 100%;  
+            display: none;background-color: #cccccc;
+        }
+        #opt_table{
+            table-layout: fixed;
+            width: 100%;  
+            display: none;background-color: #cccccc;
+        }
+        img{
+            position: absolute;top: 0; left: 0;
+        }
+        html{
+            overflow: hidden;
+            min-height: 500vh;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="home.png" alt="">
+
+
+    <center id="cookie_overlay">
+        <div id="cookie_section">
+        <h3>This website uses cookies</h3>
+            <p> We use cookies in a limited way on our website, mainly for security and to analyse the traffic on our website. This analysis is done in an aggregated and anonymous manner. We do not share information about your use of our site with any external organisations.</p>
+            <button  class="cookie_btn" typ="nec" >Use necessary cookies</button>
+            <button  class="cookie_btn" typ="sel" >Allow selection</button>
+            <button  class="cookie_btn" typ="all" >Allow All cookies</button>
+            <button  class=""  >Customize cookies</button>
+            <br>
+            <br>
+            <div>
+                <input type="checkbox" class="sel_cbs" value="Necessary" disabled="disabled" checked="checked" /><label >Necessary</label>
+                <input type="checkbox" class="sel_cbs" value="Performance" checked="checked"  /><label >Performance</label>
+                <input type="checkbox" class="sel_cbs" value="Analytics" checked="checked"  /><label >Analytics</label>
+                <input type="checkbox" class="sel_cbs" value="Advertisement"   /><label >Advertisement</label>
+                <input type="checkbox" class="sel_cbs" value="Other"   /><label >Other</label>
+                &nbsp;
+                <span id="show_det_btn" disp="table" act="Hide Details">Show Details</span>
+            </div><br>
+              <table id="details_table" >
+                <thead>
+                    <tr><th>Cookie name</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Jill</td><td>Smith</td><td>50</td></tr>
+                </tbody>
+              </table>
+
+              <table id="opt_table" >
+                <thead>
+                    <tr><th>Cookie name</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Jill</td><td>Smith</td><td>50</td></tr>
+                </tbody>
+              </table>
+
+
+
+        </div>
+    </center>
+    <script>
+
+var cookies = {
+    "_gat_UA-131302231-1": {
+        "Expiry": "1 minute",
+        "Type": "Performance",
+        "Desc": "This is a pattern type cookie set by Google Analytics, where the pattern element on the name contains the unique identity number of the account or website it relates to. It appears to be a variation of the _gat cookie which is used to limit the amount of data recorded by Google on high traffic volume websites."
+    },
+    "_gcl_au": {
+        "Expiry": "2 months",
+        "Type": "Analytics",
+        "Desc": "This cookie is used by Google Analytics to understand user interaction with the website."
+    },
+    "_gat_gtag_UA_121549186_1": {
+        "Expiry": "1 minute",
+        "Type": "Analytics",
+        "Desc": "Google uses this cookie to distinguish users."
+    },
+    "_fbp": {
+        "Expiry": "2 months",
+        "Type": "Advertisement",
+        "Desc": "This cookie is set by Facebook to deliver advertisement when they are on Facebook or a digital platform powered by Facebook advertising after visiting this website."
+    },
+    "fr": {
+        "Expiry": "2 months",
+        "Type": "Advertisement",
+        "Desc": "The cookie is set by Facebook to show relevant advertisments to the users and measure and improve the advertisements. The cookie also tracks the behavior of the user across the web on sites that have Facebook pixel or Facebook social plugin."
+    },
+    "ssr-caching": {
+        "Expiry": "1 minute",
+        "Type": "Other",
+        "Desc": "WIX - Indicates how a site was rendered."
+    },
+    "hs": {
+        "Expiry": "NA",
+        "Type": "Necessary",
+        "Desc": "The cookie is set by Wix website building platform on Wix website. The cookie is used for security purposes."
+    },
+    "svSession": {
+        "Expiry": "2 years",
+        "Type": "Analytics",
+        "Desc": "This cookie is placed by Wix website building platform on the Wix websites. The cookie is a persistent cookie and identifies unique visitors and tracks visitors session on the website."
+    },
+    "bSession": {
+        "Expiry": "30 minutes",
+        "Type": "Other",
+        "Desc": "null"
+    },
+    "cookieyesID": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "Unique identifier for visitors used by CookieYes with respect to the consent"
+    },
+    "cky-consent": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "The cookie is set by CookieYes to remember the user's consent to the use of cookies on the website."
+    },
+    "cookieyes-necessary": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "This cookie is set by CookieYes and is used to remember the consent of the users for the use of cookies in the 'Necessary' category."
+    },
+    "cookieyes-functional": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "This cookie is set by CookieYes and is used to remember the consent of the users for the use of cookies in the 'Functional' category."
+    },
+    "cookieyes-analytics": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "This cookie is set by CookieYes and is used to remember the consent of the users for the use of cookies in the 'Analytics' category."
+    },
+    "cookieyes-performance": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "This cookie is set by CookieYes and is used to remember the consent of the users for the use of cookies in the 'Performance' category."
+    },
+    "cookieyes-advertisement": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "This cookie is set by CookieYes and is used to remember the consent of the users for the use of cookies in the 'Advertisement' category."
+    },
+    "cookieyes-other": {
+        "Expiry": "1 year",
+        "Type": "Necessary",
+        "Desc": "This cookie is set by CookieYes and is used to remember the consent of the users for the use of cookies categorized as 'Other'."
+    },
+    "XSRF-TOKEN": {
+        "Expiry": "2 hours",
+        "Type": "Necessary",
+        "Desc": "The cookie is set by Wix website building platform on Wix website. The cookie is used for security purposes."
+    },
+    "laravel_session": {
+        "Expiry": "2 hours",
+        "Type": "Necessary",
+        "Desc": "laravel uses laravel_session to identify a session instance for a user, this can be changed"
+    },
+    "NID": {
+        "Expiry": "6 months",
+        "Type": "Advertisement",
+        "Desc": "This cookie is used to a profile based on user's interest and display personalized ads to the users."
+    },
+    "_gat_gtag_UA_175898750_1": {
+        "Expiry": "1 minute",
+        "Type": "Analytics",
+        "Desc": "Google uses this cookie to distinguish users."
+    },
+    "GPS": {
+        "Expiry": "30 minutes",
+        "Type": "Analytics",
+        "Desc": "This cookie is set by Youtube and registers a unique ID for tracking users based on their geographical location"
+    },
+    "VISITOR_INFO1_LIVE": {
+        "Expiry": "5 months",
+        "Type": "Advertisement",
+        "Desc": "This cookie is set by Youtube. Used to track the information of the embedded YouTube videos on a website."
+    },
+    "YSC": {
+        "Expiry": "NA",
+        "Type": "Performance",
+        "Desc": "This cookies is set by Youtube and is used to track the views of embedded videos."
+    },
+    "G_ENABLED_IDPS": {
+        "Expiry": "7979 years",
+        "Type": "Functional",
+        "Desc": "The cookie is used by Google and is used for Google Single Sign On."
+    },
+    "IDE": {
+        "Expiry": "1 year",
+        "Type": "Advertisement",
+        "Desc": "Used by Google DoubleClick and stores information about how the user uses the website and any other advertisement before visiting the website. This is used to present users with ads that are relevant to them according to the user profile."
+    },
+    "__cfduid": {
+        "Expiry": "4 weeks",
+        "Type": "Necessary",
+        "Desc": "The cookie is set by CloudFare. The cookie is used to identify individual clients behind a shared IP address and apply security settings on a per-client basis. It does not correspond to any user ID in the web application and does not store any personally identifiable information."
+    },
+    "PHPSESSID": {
+        "Expiry": "NA",
+        "Type": "Necessary",
+        "Desc": "This cookie is native to PHP applications. The cookie is used to store and identify a users' unique session ID for the purpose of managing user session on the website. The cookie is a session cookies and is deleted when all the browser windows are closed."
+    },
+    "_ga": {
+        "Expiry": "2 years",
+        "Type": "Analytics",
+        "Desc": "This cookie is installed by Google Analytics. The cookie is used to calculate visitor, session, campaign data and keep track of site usage for the site's analytics report. The cookies store information anonymously and assign a randomly generated number to identify unique visitors."
+    },
+    "_gid": {
+        "Expiry": "1 day",
+        "Type": "Analytics",
+        "Desc": "This cookie is installed by Google Analytics. The cookie is used to store information of how visitors use a website and helps in creating an analytics report of how the wbsite is doing. The data collected including the number visitors, the source where they have come from, and the pages viisted in an anonymous form."
+    },
+    "_gat_gtag_UA_131302231_1": {
+        "Expiry": "1 minute",
+        "Type": "Analytics",
+        "Desc": "Google uses this cookie to distinguish users."
+    },
+    "test_cookie": {
+        "Expiry": "15 minutes",
+        "Type": "Advertisement",
+        "Desc": "This cookie is set by doubleclick.net. The purpose of the cookie is to determine if the users' browser supports cookies."
+    },
+    "preloader": {
+        "Expiry": "NA",
+        "Type": "Other",
+        "Desc": "null"
+    }   
+};
+        document.cookie = "test_cookie=adkaskjakjd; expires=Thu, 18 Dec 2020 12:00:00 UTC";
+        document.cookie = "_gat_UA-131302231-1=32742646adshjdsha; expires=Thu, 18 Dec 2020 12:00:00 UTC";
+        document.cookie = "hs=hashdj2; expires=Thu, 18 Dec 2020 12:00:00 UTC";
+        document.cookie = "username=John Doe; expires=Thu, 18 Dec 2020 12:00:00 UTC; path=/";
+
+
+        var searchedCentresLoc = [];
+
+        
+
+        if(localStorage.getItem("selected_cookies")){
+
+            var selc_str = localStorage.getItem("selected_cookies");
+
+            $(".sel_cbs:checkbox").each(function(){
+
+                selc_str.indexOf($(this).val()) === -1 ? $(this).prop("checked", false) :  $(this).prop("checked", true);
+
+            });
+
+            remove_unselected();
+
+        }
+
+        $("body").delegate(".cookie_btn", "click", function(){
+
+            var typ = $(this).attr("typ");
+
+            (typ == "all") ? $(":checkbox").prop("checked", true) : false;
+
+            (typ == "nec") ? $(".sel_cbs:not(:disabled)").prop("checked", false) : false;
+
+            remove_unselected();
+
+            var selected_ls = "";
+            localStorage.setItem("selected_cookies",null);
+
+            $(".sel_cbs:checkbox").each(function(){
+
+                ($(this).prop("checked")) ? selected_ls += $(this).val()+"," : false;
+
+            });
+
+            localStorage.setItem("selected_cookies", selected_ls.replace(/,\s*$/, "")); //------------LAST comma removed
+
+            $("#cookie_overlay").fadeOut();
+
+        });
+
+        remove_unselected();
+
+        function remove_unselected() {
+            var theCookies = document.cookie.split(';');
+            var unselected_ls = "";
+            $(".sel_cbs:not(:checked)").each(function(){
+                var unsel = $(this).val();
+                for (var i = 1 ; i <= theCookies.length; i++) {
+                    var singCook = theCookies[i-1].split("=");
+                    var cookie_name = singCook[0].trim();
+                    if(cookies[cookie_name] != undefined){
+
+                        (cookies[cookie_name]['Type'] == unsel) ? delete_cookie(cookie_name) : false;
+
+
+                    }else{
+
+                        $(":checkbox[value=Other]").prop("checked") ? false : delete_cookie(cookie_name) ;
+
+                    }
+                }
+            });
+        }
+
+       function delete_cookie(name) {
+            document.cookie = name+"=; expires=Thu, 18 Dec 1990 12:00:00 UTC";
+            document.cookie = name+"=; expires=Thu, 18 Dec 1990 12:00:00 UTC; path=/";
+        }
+
+        $("body").delegate("#show_det_btn", "click", function(){
+
+            if($("#details_table").css('display') == "none"){
+
+                var theCookies = document.cookie.split(';');
+                var ctr = '';
+                for (var i = 1 ; i <= theCookies.length; i++) {
+
+                    var singCook = theCookies[i-1].split("=");
+                    var cookie_name = singCook[0].trim();
+
+                    var type =  cookies[cookie_name] == undefined ? 'Other' : cookies[cookie_name]['Type'];
+                    var desc =  cookies[cookie_name] == undefined ? 'NA ' : cookies[cookie_name]['Desc'];
+
+                    ctr += "<tr><td>"+cookie_name+"</td><td>"+type+"</td><td>"+desc+"</td></tr>";
+
+                }
+                // console.log(ctr);
+                $("#details_table tbody").empty().append(ctr);
+                $(this).text("Hide Details");
+                $("#details_table").css('display',"table");
+
+            }else{
+
+                $(this).text("Show Details");
+                $("#details_table").css('display',"none");
+
+            }
+        });
+        
+    </script>
+
+
+</body>
+
+</html>
