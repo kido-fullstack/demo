@@ -1,17 +1,47 @@
-
-<!DOCTYPE html>
 <html>
-<title>HTML Tutorial</title>
 <head>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e5039eae-d8f0-4bb3-896e-2599b5543298" data-blockingmode="auto" type="text/javascript"></script>
-</head>
+<meta charset="utf-8">
+<title>Customer table</title>
+
 <body>
+ <table class="table table-striped" id="ex-table">
+  <tr id="tr">
+    <th>Name</th>
+    <th>Credit</th>
+  </tr>
+</table>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
 
-</body>
-<footer>
-<!-- <script id="CookieDeclaration" src="https://consent.cookiebot.com/e5039eae-d8f0-4bb3-896e-2599b5543298/cd.js" type="text/javascript" async></script>  -->
-</footer>
-</html>
+<script type="module">
+
+    //THIS IS WHERE YOU PASTE THE CODE TO CONNECT TO YOUR OWN DATABASE
+    //Copy and paste the CDN bit of code from your app that you created on Firebase.
+    //The script tag above is already there, so careful not to have duplicate script tags.
+    //After you've copied and pasted, just delete the unnecessary script tags. 
+
+    import {initializeApp} from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.14.0/firebase-app.js"
+
+    const config = {
+        apiKey: "AIzaSyC9jCezQ12K06LPwd4e3FAabbzS5c1mXi8",
+        authDomain: "ac-services-8e7a9.firebaseapp.com",
+        databaseURL: "https://ac-services-8e7a9-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "ac-services-8e7a9",
+        storageBucket: "ac-services-8e7a9.appspot.com",
+        messagingSenderId: "351317260662",
+        appId: "1:351317260662:web:19cdec0ccb07e47792a257"
+    };
+
+    import {getDatabase, ref, get, set, child, update, remove}
+    from "https://cdnjs.cloudflare.com/ajax/libs/firebase/9.14.0/firebase-database.js"
+    
+    
+    const database = getDatabase();
+
+    const starCountRef = ref(db, 'workers');
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+  console.log(data);
+//   updateStarCount(postElement, data);
+});
+
+  </script>
